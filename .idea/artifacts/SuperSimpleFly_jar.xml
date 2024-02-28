@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SuperSimpleFly:jar">
+    <output-path>$USER_HOME$/Documents/Plugins/By Me</output-path>
+    <root id="archive" name="SuperSimpleFly.jar">
+      <element id="module-output" name="SuperSimpleFly" />
+    </root>
+  </artifact>
+</component>

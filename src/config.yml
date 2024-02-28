@@ -1,0 +1,22 @@
+#    ____                        ____  _                 _      _____ _
+#   / ___| _   _ _ __   ___ _ __/ ___|(_)_ __ ___  _ __ | | ___|  ___| |_   _
+#   \___ \| | | | '_ \ / _ \ '__\___ \| | '_ ` _ \| '_ \| |/ _ \ |_  | | | | |
+#    ___) | |_| | |_) |  __/ |   ___) | | | | | | | |_) | |  __/  _| | | |_| |
+#   |____/ \__,_| .__/ \___|_|  |____/|_|_| |_| |_| .__/|_|\___|_|   |_|\__, |
+#               |_|                               |_|                   |___/
+
+
+prefix:
+  enable_prefix: true #Set to true to have the prefix before the message and false to disable it.
+  prefix: "&7[&aSuperSimpleFly&7] " #The prefix who appear before the message.
+
+messages:
+  fly_enabled: "&eFly Mode: &aEnabled" #Message who appear when you activate the /fly
+  fly_disabled: "&eFly Mode: &cDisable" #Message who appear when you deactivate the /fly
+  gamemode_creative_error: "&cYou are in creative mode you can already fly." #Message who appear when you are in creative mode and you do /fly
+  no_permission: "&cYou do not have the permission for this command." #Message who appear when you don't have the permission
+  reload_message: "&aConfiguration file has been reloaded." #Message who appear when you do /reload
+
+permission:
+  fly: "ssf.use" #The Permission to do /fly
+  reload: "ssf.reload" #The Permission to do /ssf reload
