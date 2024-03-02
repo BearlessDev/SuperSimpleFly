@@ -7,5 +7,5 @@ main: fr.bearless.supersimplefly.Main
 commands:
   fly:
     description: Allow players to fly
-  ssf:
+  ssf-reload:
     description: Reload the configuration file
