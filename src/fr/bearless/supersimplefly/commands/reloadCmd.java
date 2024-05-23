@@ -19,20 +19,24 @@ public class reloadCmd implements CommandExecutor {
 
         if(sender instanceof Player) {
             Player player = (Player) sender;
-            if(player.hasPermission(plugin.getConfig().getString("permission.reload"))) {
+            if(args.length == 1) {
+                if(args[0].equalsIgnoreCase("reload")) {
+                    if(player.hasPermission(plugin.getConfig().getString("permission.reload"))) {
 
-                plugin.reloadConfig();
+                        plugin.reloadConfig();
 
-                if(plugin.getConfig().getBoolean("prefix.enable_prefix")) {
-                    player.sendMessage(plugin.getConfig().getString("prefix.prefix").replace("&", "§") + plugin.getConfig().getString("messages.reload_message").replace("&", "§"));
-                }else {
-                    player.sendMessage(plugin.getConfig().getString("messages.reload_message").replace("&", "§"));
-                }
-            }else {
-                if(plugin.getConfig().getBoolean("prefix.enable_prefix")) {
-                    player.sendMessage(plugin.getConfig().getString("prefix.prefix").replace("&", "§") + plugin.getConfig().getString("messages.no_permission").replace("&", "§"));
-                }else {
-                    player.sendMessage(plugin.getConfig().getString("messages.no_permission").replace("&", "§"));
+                        if(plugin.getConfig().getBoolean("prefix.enable_prefix")) {
+                            player.sendMessage(plugin.getConfig().getString("prefix.prefix").replace("&", "§") + plugin.getConfig().getString("messages.reload_message").replace("&", "§"));
+                        }else {
+                            player.sendMessage(plugin.getConfig().getString("messages.reload_message").replace("&", "§"));
+                        }
+                    }else {
+                        if(plugin.getConfig().getBoolean("prefix.enable_prefix")) {
+                            player.sendMessage(plugin.getConfig().getString("prefix.prefix").replace("&", "§") + plugin.getConfig().getString("messages.no_permission").replace("&", "§"));
+                        }else {
+                            player.sendMessage(plugin.getConfig().getString("messages.no_permission").replace("&", "§"));
+                        }
+                    }
                 }
             }
         }

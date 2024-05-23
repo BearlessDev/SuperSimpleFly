@@ -7,9 +7,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+
 public class flyCmd implements CommandExecutor {
 
-    private Main main2;
+    ArrayList<Player> playersFlying = new ArrayList<>();
+
+    final Main main2;
 
     public flyCmd(Main main) {
         this.main2 = main;
@@ -20,11 +24,12 @@ public class flyCmd implements CommandExecutor {
 
         if(sender instanceof Player){
             Player player = (Player) sender;
+
             if(player.hasPermission(main2.getConfig().getString("permission.fly"))){
                 if(player.getGameMode() != GameMode.CREATIVE){
-                    if(player.isFlying() == false){
+                    if(!playersFlying.contains(player)){
+                        playersFlying.add(player);
                         player.setAllowFlight(true);
-                        player.setFlying(true);
 
                         if(main2.getConfig().getBoolean("prefix.enable_prefix")){
                             player.sendMessage(main2.getConfig().getString("prefix.prefix").replace("&", "§") + main2.getConfig().getString("messages.fly_enabled").replace("&", "§"));
@@ -32,8 +37,8 @@ public class flyCmd implements CommandExecutor {
                             player.sendMessage(main2.getConfig().getString("messages.fly_enabled").replace("&", "§"));
                         }
                     }else{
+                        playersFlying.remove(player);
                         player.setAllowFlight(false);
-                        player.setFlying(false);
 
                         if(main2.getConfig().getBoolean("prefix.enable_prefix")){
                             player.sendMessage(main2.getConfig().getString("prefix.prefix").replace("&", "§") + main2.getConfig().getString("messages.fly_disabled").replace("&", "§"));
