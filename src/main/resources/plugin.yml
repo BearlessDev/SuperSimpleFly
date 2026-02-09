@@ -1,0 +1,13 @@
+main: fr.bearless.supersimplefly.SuperSimpleFly
+
+name: ${project.name}
+version: ${project.version}
+author: Bearless_
+website: https://discord.gg/zJEREDAcPZ
+
+commands:
+  ssf-reload:
+    description: Reload the config.yml file.
+  ssf-fly:
+    aliases: [fly]
+    description: Allow you to fly if you have the required permission.

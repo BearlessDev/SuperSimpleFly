@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SuperSimpleFly:jar">
+    <output-path>$PROJECT_DIR$/../../../MC Servers/Dev 1.8/plugins</output-path>
+    <root id="archive" name="SuperSimpleFly.jar">
+      <element id="module-output" name="SuperSimpleFly" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/pl/mikigal/ConfigAPI/1.2.6/ConfigAPI-1.2.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
